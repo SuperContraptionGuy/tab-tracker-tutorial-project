@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+// endpoints
 // defining a route in express (API endpoint to hit)
 //
 // kinds of requests:
@@ -29,6 +30,12 @@ app.use(cors());
 app.get('/status', (req, res) => {
   res.send({ // send back json response
     message: 'yo wad up world!',
+  });
+});
+
+app.post('/register', (req, res) => {
+  res.send({
+    message: `Hello ${req.body.email}. Thanks for signing up.`,
   });
 });
 

@@ -9,7 +9,7 @@ const morgan = require('morgan');
 
 // basic webserver that enables us to build REST style API endpoints
 const app = express();
-app.use(morgan('combine'));
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 // allows any client or host to access this from different domains, security
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+// endpoints
 // defining a route in express (API endpoint to hit)
 //
 // kinds of requests:
@@ -29,6 +30,13 @@ app.use(cors());
 app.get('/status', (req, res) => {
   res.send({ // send back json response
     message: 'yo wad up world!',
+  });
+});
+
+app.post('/register', (req, res) => {
+  res.send({
+    message: `Hello ${req.body.email}. Thanks for signing up.`,
+
   });
 });
 

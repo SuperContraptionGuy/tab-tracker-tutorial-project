@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 
-// this file designates how the server will serve up different routs to the
+// this file designates how the server will serve up different routes to the
 // browser.
 //
 // this is responsible for the # in the URL, has to do with forward/back

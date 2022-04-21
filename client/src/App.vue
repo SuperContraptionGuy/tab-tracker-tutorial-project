@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!--img src="./assets/logo.png"-->
+    <!-- all the pages accessed with the 'router' are pasted here -->
     <router-view/>
   </div>
 </template>

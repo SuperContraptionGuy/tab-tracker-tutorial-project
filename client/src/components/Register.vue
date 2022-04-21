@@ -32,6 +32,8 @@ which calls Api.post('register', creds) from Api.js
 which returned an axios object that handels the call by making a post request to
 the server defined by Api.js in the axios.create function.
 
+register.vue -> AuthenticationService.js -> Api.js -> axios
+
 Backend:
 The post request is captured by express listening on port 8081 defined by
 app.listen() in app.js, which also defines a function to call when a post
@@ -39,10 +41,14 @@ request to /register is recieved in app.post() which sends back a JSON response
 echoing some of the request data.  All of this defined in app.js which also
 declares app = express();  this app.js file is run by node.js.
 
+app.js
+
 Frontend:
 Finally, the await funtion in Register.vue completes and response = await
 AuthenticationService.register() resolves to the server's response.  the script
 logs the response JSON data to the console.
+
+axios -> Api.js -> AuthenticationService.js -> Register.vue
 
 
 -->

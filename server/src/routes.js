@@ -1,15 +1,14 @@
 // All routes are defined here instead of app.js for simplicity and
-// reviewability
-module.exports = (app) => {
-  app.get('/status', (req, res) => {
-    res.send({ // send back json response
-      message: 'yo wad up world!',
-    });
-  });
+// reviewability.
+// Routes point to the controllers for functionality.
+const AuthenticationController =
+    require('./controllers/AuthenticationController');
+const HelloWorldController = require('./controllers/HelloWorldController');
 
-  app.post('/register', (req, res) => {
-    res.send({
-      message: `Hello ${req.body.email}. Thanks for signing up.`,
-    });
-  });
+module.exports = (app) => {
+  app.get('/status',
+      HelloWorldController.reply);
+
+  app.post('/register',
+      AuthenticationController.register);
 };

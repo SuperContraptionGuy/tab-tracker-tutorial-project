@@ -17,8 +17,9 @@ fs
       file !== 'index.js',
     )
     .forEach((file) => {
-      const model = require(path.join(__dirname, file));
-      db[model.name] = module;
+      const model =
+          require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+      db[model.name] = model;
     });
 
 db.sequelize = sequelize;
